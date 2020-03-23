@@ -52,11 +52,11 @@ userPowerValue += userAutoValue
 let evilDisplay = evilPowerValue - userPowerValue
 
 if (evilDisplay <= 0){
+  document.getElementById("kitty").classList.add("hidden")
   userAutoValue = 0
   evilAutoInterval = 0
   evilDisplay = 0
-  alert("You've finally won!!!")
-  window.location.reload()
+  //window.location.reload()
 }
 
 // @ts-ignore
