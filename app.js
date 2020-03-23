@@ -20,7 +20,7 @@ let heroList = {
     name: "HeroOne",
     power: 5,
     cost: 50,
-    sprite: "./old-man.gif"},
+    sprite: "old-man.gif"},
 
     hero2: {
       name: "HeroTwo",
@@ -63,6 +63,8 @@ if (evilDisplay <= 0){
 document.getElementById("kitty-power").innerText = evilDisplay;
 // @ts-ignore
 document.getElementById("user-power").innerText = userPowerValue;
+// @ts-ignore
+document.getElementById("hero-power").innerText = userAutoValue*20;
 // @ts-ignore
 document.getElementById("legacy-value").innerText = legacyValue;
 }
