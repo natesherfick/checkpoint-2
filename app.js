@@ -5,8 +5,9 @@ let userClickValue = 1
 let userAutoValue = 0
 
 //EVIL VALUES
-let evilPowerValue = 0
-let evilAutoInterval = 1
+let evilPowerValue = 1
+let evilAutoInterval = 20
+
 
 //UPGRADE VALUES
 let levelUpCost = 10
@@ -17,26 +18,26 @@ let heroCount = 0
 let heroList = {
   hero1: {
     name: "HeroOne",
-    power: 50,
-    cost: 20,
-    sprite: "placeholder1.gif"},
+    power: 5,
+    cost: 50,
+    sprite: "./old-man.gif"},
 
     hero2: {
       name: "HeroTwo",
-      power: 50,
-      cost: 20,
+      power: 10,
+      cost: 200,
       sprite: "placeholder1.gif"},
 
       hero3: {
         name: "HeroThree",
-        power: 50,
-        cost: 20,
+        power: 15,
+        cost: 1000,
         sprite: "placeholder1.gif"},
         
         hero4: {
           name: "HeroFour",
-          power: 50,
-          cost: 20,
+          power: 20,
+          cost: 2500,
           sprite: "placeholder1.gif"}
   }
 
@@ -48,34 +49,53 @@ let heroList = {
 function powerCreep(){
 evilPowerValue += evilAutoInterval
 userPowerValue += userAutoValue
+let evilDisplay = evilPowerValue - userPowerValue
+
+if (evilDisplay <= 0){
+  userAutoValue = 0
+  evilAutoInterval = 0
+  evilDisplay = 0
+  alert("You've finally won!!!")
+  window.location.reload()
+}
+
 // @ts-ignore
-document.getElementById("kitty-power").innerText = evilPowerValue;
+document.getElementById("kitty-power").innerText = evilDisplay;
 // @ts-ignore
 document.getElementById("user-power").innerText = userPowerValue;
+// @ts-ignore
+document.getElementById("legacy-value").innerText = legacyValue;
 }
 
 
 //  INTERVAL AT WHICH THE KITTY'S POWER LEVEL GROWS AND HOW OFTEN POWERCREEP() RUNS  //
 function powerCreepRate(){
   setInterval(powerCreep, 50)
+  
 }
 
 
 // 
 function clickFunction(){
 userPowerValue += userClickValue
+legacyValue += userClickValue
 // @ts-ignore
 document.getElementById("user-power").innerText = userPowerValue
+// @ts-ignore
+document.getElementById("legacy-value").innerText = legacyValue
 }
 
 
 
 //FUNTION THAT INCREASES CLICK VALUE BY 50%
 function levelUp(){
-  if (legacyValue >= levelUpCost)
-  userClickValue *= 1.5
+  if (legacyValue >= levelUpCost){
+  userClickValue *= 2
   legacyValue -= levelUpCost
-  levelUpCost *= 1.5
+  levelUpCost *= 3
+  // @ts-ignore
+  document.getElementById("level-up-cost").innerText = `Cost: ${levelUpCost}`
+}
 }
 
 
@@ -85,9 +105,10 @@ function hireHero (heroName) {
 
   if (legacyValue >= hero.cost && heroCount < 3){
     userAutoValue += hero.power
-    legacyValue - hero.cost
+    legacyValue -= hero.cost
     heroCount++
 
+    document.getElementById(`${heroName}`).classList.add("hidden")
     // @ts-ignore
     document.getElementById(`position-${heroCount}`).src = hero.sprite;
   }

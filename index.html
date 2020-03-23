@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Kitty's Bane</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,27 +9,111 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   </head>
 
 
-  <body>
-  <div id="kitty-power"></div>
+  <body class="pixel-font text-light">
+<div class="container-fluid backgroundish text-center">
 
-  <div id="user-power"></div>
-
-
+<div class="bgish-opa py-2">
 
 
+  <div>Your Power Level:
+  <span id="user-power"></span>
+</div>
+
+<div class="">
+  <img class="coin" src="../coin.gif">
+<span id="legacy-value"></span>
+</div>
+</div>
+
+
+<!-------USER FIGHT BUTTON------->
+<div>
+<div class="btn btn-danger text-light my-2" onclick="clickFunction()">Fight!</div>
+<div id="user-click-value"></div>
+</div>
 
 
 
+<!-------LEVEL UP BUTTON------->
+<div class="my-2 p-2">
+<div class="btn btn-primary mb-2" onclick="levelUp()">Level Up!</div>
+<div>
+<img class="coin" src="../coin.gif">
+<span id="level-up-cost">Cost: 10</span>
+</div>
+</div>
+
+<!-------HIRE HEROES------->
+<div class="row">
+<div id="hero1" class="col-3 p-3">
+<div class="btn btn-success mb-2" onclick="hireHero('hero1')">Hire C. Nile</div>
+<div>
+<img class="coin" src="../coin.gif">
+<span>Cost: 50</span>
+</div>
+</div>
+
+<div id="hero2" class="col-3 p-3">
+  <div class="btn btn-success mb-2" onclick="hireHero('hero2')">Hire Tipsy</div>
+  <div>
+  <img class="coin" src="../coin.gif">
+  <span>Cost: 200</span>
+  </div>
+  </div>
+
+  <div id="hero3" class="col-3 p-3">
+    <div class="btn btn-success mb-2" onclick="hireHero('hero3')">Hire Hannah</div>
+    <div>
+    <img class="coin" src="../coin.gif">
+    <span>Cost: 1000</span>
+    </div>
+    </div>
+
+    <div id="hero4" class="col-3 p-3">
+      <div class="btn btn-success mb-2" onclick="hireHero('hero4')">Hire Mecha</div>
+      <div>
+      <img class="coin" src="../coin.gif">
+      <span>Cost: 2500</span>
+      </div>
+      </div>
+
+      </div>
+
+
+<div class="row">
+<!--POSITION 1-->
+
+<img id="position-1" class="col-3 img-fluid" src="">
 
 
 
+<!--POSITION 2-->
+
+<img id="position-2" class="col-3 img-fluid" src="">
 
 
 
+<!--POSITION 3-->
+<img id="position-3" class="col-3 img-fluid" src="">
 
+<!--KITTY POSITION-->
+<div class="col-3 text-warning">
+  <br>
+  <br>
+  <br>
+  <div class="bgish-opa py-2">
+    Power Level:
+    <div id="kitty-power"></div>
+    </div>  
+<img class="img-fluid kitty" src="../Kitty.gif">
+
+</div>
+</div>
+</div>
 
 
     <!-- Optional JavaScript -->
