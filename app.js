@@ -26,19 +26,19 @@ let heroList = {
       name: "HeroTwo",
       power: 10,
       cost: 200,
-      sprite: "placeholder1.gif"},
+      sprite: "tipsy.gif"},
 
       hero3: {
         name: "HeroThree",
         power: 15,
         cost: 1000,
-        sprite: "placeholder1.gif"},
+        sprite: "blink.gif"},
         
         hero4: {
           name: "HeroFour",
           power: 20,
           cost: 2500,
-          sprite: "placeholder1.gif"}
+          sprite: "mecha.gif"}
   }
 
 
